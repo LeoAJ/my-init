@@ -18,18 +18,16 @@ export default async function mi() {
 
     const mircPath = path.resolve(os.homedir(), MIRC);
     
-    // check if ygorc existed
     const hasMirc = await fs.pathExistsSync(mircPath);
 
     let json;
 
     if (hasMirc) {
-      // read
       log.info('mi', 'load your .mirc file');
       json = await readPkg.sync(mircPath, { normalize: false });
     } else {
       log.info('mi', 'create .mirc file in your home directory');
-      // create one
+
       const projName = path.basename(process.cwd());
       json = {
         name: projName,
@@ -38,7 +36,6 @@ export default async function mi() {
       await writeJsonFile.sync(mircPath, json, { indent: 2 });
     }
       
-    // write
     log.info('mi', 'create package.json');
     await writeJsonFile.sync(path.resolve(process.cwd(), 'package.json'), json, { indent: 2 });
   } catch (err) {
