@@ -25,12 +25,7 @@ export default async function mi() {
       json = await readPkg.sync(mircPath, { normalize: false });
     } else {
       log.info('mi', 'create .mirc file in your home directory');
-
-      const projName = path.basename(process.cwd());
-      json = {
-        name: projName,
-        ...defaultPackageJson
-      };
+      json = { ...defaultPackageJson };
       await writeJsonFile.sync(mircPath, json, { indent: 2 });
     }
       

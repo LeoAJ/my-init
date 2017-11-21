@@ -6,10 +6,8 @@ import mi, { MIRC, defaultPackageJson } from '../mi';
 
 describe('- mi CLI -', () => {
   const mockHomeDir = '/user/home/';
-  const folderName = 'mi';
   beforeEach(() => {  
     os.homedir = jest.fn().mockImplementation(_ => mockHomeDir);
-    process.cwd = jest.fn().mockImplementation(_ => folderName);
     writeJsonFile.sync = jest.fn();
   });
 
@@ -18,7 +16,7 @@ describe('- mi CLI -', () => {
     await mi();
     expect(writeJsonFile.sync).toHaveBeenCalledWith(
       `${mockHomeDir}${MIRC}`,
-      { ...defaultPackageJson, name: folderName },
+      { ...defaultPackageJson },
       { indent: 2 }
     );
   });
