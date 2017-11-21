@@ -4,7 +4,7 @@ import writeJsonFile from 'write-json-file';
 import readPkg from 'read-pkg';
 import mi, { MIRC, defaultPackageJson } from '../mi';
 
-describe('mi', () => {
+describe('- mi CLI -', () => {
   const mockHomeDir = '/user/home/';
   const folderName = 'mi';
   beforeEach(() => {  
