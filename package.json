@@ -11,7 +11,9 @@
   ],
   "scripts": {
     "dev": "babel -w mi.js -d lib",
-    "build": "babel mi.js -d lib"
+    "build": "babel mi.js -d lib",
+    "coverage": "jest --coverage",
+    "test": "jest test/"
   },
   "bin": {
     "mi": "./bin/mi.js"
@@ -28,5 +30,11 @@
     "npmlog": "^4.1.2",
     "read-pkg": "^3.0.0",
     "write-json-file": "^2.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
   }
 }

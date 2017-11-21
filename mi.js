@@ -5,21 +5,19 @@ import readPkg from 'read-pkg';
 import log from 'npmlog';
 import writeJsonFile from 'write-json-file';
 
-const defaultPackageJson = {
+export const defaultPackageJson = {
   version: "1.0.0",
   main: "index.js",
   license: "MIT"
 };
 
-const MIRC = '.mirc';
+export const MIRC = '.mirc';
 
 export default async function mi() {
   try {
 
     const mircPath = path.resolve(os.homedir(), MIRC);
-    
     const hasMirc = await fs.pathExistsSync(mircPath);
-
     let json;
 
     if (hasMirc) {
