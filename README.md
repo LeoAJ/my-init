@@ -5,6 +5,8 @@
 
 > CLI to create your customize package.json. Instead of using `npm init` or `yarn init`, you can start your project with your own customize package.json
 
+![mi](https://user-images.githubusercontent.com/492921/33049538-7a1ff6d4-ce15-11e7-9fb5-df7828eb27f6.gif)
+
 ## Install
 
 ```
