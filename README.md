@@ -1,4 +1,4 @@
-# mi
+# mi [![Travis](https://img.shields.io/travis/LeoAJ/my-init.svg?style=for-the-badge)](https://travis-ci.org/LeoAJ/my-init) [![license](https://img.shields.io/github/license/LeoAJ/my-init.svg?style=for-the-badge)](https://github.com/LeoAJ/my-init/blob/master/LICENSE)
 
 > CLI to create your customize package.json
 
