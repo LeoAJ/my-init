@@ -28,9 +28,15 @@ export default async function mi() {
       json = { ...defaultPackageJson };
       await writeJsonFile.sync(mircPath, json, { indent: 2 });
     }
-      
     log.info('mi', 'create package.json');
-    await writeJsonFile.sync(path.resolve(process.cwd(), 'package.json'), json, { indent: 2 });
+    await writeJsonFile.sync(
+      path.resolve(process.cwd(), 'package.json'),
+      {
+        name: path.basename(process.cwd()),
+        ...json
+      },
+      { indent: 2 }
+    );
   } catch (err) {
     log.error('mi', 'Error: ', err);
   }
